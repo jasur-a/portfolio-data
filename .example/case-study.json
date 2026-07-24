@@ -1,0 +1,13 @@
+{
+  "slug": "example",
+  "problem": "Online fashion shoppers face high return rates...",
+  "decisions": [
+    { "title": "Domain-driven architecture over Atomic Design", "body": "..." },
+    { "title": "Three.js for rendering, not a hosted 3D SaaS", "body": "..." }
+  ],
+  "process": [
+    { "image": "process-1.png", "caption": "Early wireframes for the try-on flow" }
+  ],
+  "result": "...",
+  "learnings": "..."
+}

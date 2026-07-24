@@ -1,0 +1,14 @@
+{
+  "slug": "javan",
+  "problem": "AI recipe from video",
+  "decisions": [
+    { "title": "1", "body": "..." },
+    { "title": "2", "body": "..." }
+  ],
+  "process": [
+    { "image": "flowchart.png", "caption": "FlowChart" },
+    { "image": "project.png", "caption": "Input and Output System" }
+  ],
+  "result": "...",
+  "learnings": "..."
+}

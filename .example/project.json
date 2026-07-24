@@ -1,0 +1,10 @@
+{
+  "slug": "example",
+  "title": "example",
+  "tagline": "AI-powered virtual platform",
+  "description": "Realistic rendering and personalized recommendations for online fashion retail.",
+  "stack": ["Next.js", "React", "Three.js", "Tailwind CSS"],
+  "liveHref": "https://exmaple.app",
+  "githubHref": "https://github.com/jasur-a/example",
+  "featured": false
+}

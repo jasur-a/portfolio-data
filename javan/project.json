@@ -1,0 +1,10 @@
+{
+  "slug": "vestidor",
+  "title": "Vestidor",
+  "tagline": "AI-powered virtual try-on platform",
+  "description": "Realistic rendering and personalized recommendations for online fashion retail.",
+  "stack": ["Next.js", "React", "Three.js", "Tailwind CSS"],
+  "liveHref": "https://vestidor.app",
+  "githubHref": "https://github.com/jasur-a/vestidor",
+  "featured": true
+}
