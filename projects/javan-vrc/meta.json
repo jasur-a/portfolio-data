@@ -1,14 +1,12 @@
 {
   "slug": "javan-vrc",
   "title": "Javan VRC",
-  "tagline": "AI-powered extract video recipe ",
-  "description": "Javan-VRC is an AI prototype for the extraction of Mexican food recipes from videos extracted from youtube or uploaded by the user",
+  "tagline": "AI-powered recipe extraction from cooking videos",
+  "description": "Extracts ingredients and step-by-step procedures from Mexican cooking videos in Spanish, combining speech recognition and OCR to generate downloadable PDF/TXT recipes.",
   "coverImage": "project.png",
-  "stack": ["React.js", "Python", "Flask"],
+  "stack": ["Python", "Flask", "React", "MongoDB", "Docker", "OCR", "NLP"],
   "githubHref": "https://github.com/jasur-a/javan-vrc",
-  "status": "done",
-  "private": false,
   "visible": true,
-  "featured": true
-
+  "featured": true,
+  "badges": ["Academic", "Prototype"]
 }

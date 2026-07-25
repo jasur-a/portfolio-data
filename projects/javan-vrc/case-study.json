@@ -1,15 +1,32 @@
 {
   "slug": "javan-vrc",
-  
-  "problem": "AI recipe from video",
+  "problem": "Cooking videos on platforms like YouTube rarely come with a written recipe. Viewers have to pause and rewind repeatedly to capture every ingredient and step, which gets even more tedious when trying to cook along in real time. It also excludes people with hearing impairments when a video has no subtitles or written description. Javan set out to automatically extract structured recipes (ingredients + procedure) from Mexican cooking videos in Spanish, whether the content was spoken, shown as on-screen text, or a mix of both.",
   "decisions": [
-    { "title": "1", "body": "..." },
-    { "title": "2", "body": "..." }
+    {
+      "title": "Dual extraction pipeline for spoken and visual content",
+      "body": "Not every video narrates its ingredients aloud, and not every video displays them as text — some do both. The system detects which case it's dealing with and routes accordingly: audio is converted and transcribed with MoviePy and SpeechRecognition, while on-screen text is extracted frame-by-frame with PyTesseract OCR, then both outputs are merged for postprocessing."
+    },
+    {
+      "title": "PyTesseract over EasyOCR",
+      "body": "An early prototype used EasyOCR, but its hardware cost when processing thousands of frames per video made it impractical to scale. Switching to PyTesseract cut resource consumption significantly without a meaningful drop in extraction quality."
+    },
+    {
+      "title": "MongoDB over SQLite",
+      "body": "SQLite was the initial choice, but its licensing cost and rigid schema were a poor fit for recipe data, which varies a lot in shape from video to video. MongoDB's flexible document model made it possible to store inconsistent fields — extra ingredients, missing quantities — without breaking existing records."
+    },
+    {
+      "title": "Dockerized services orchestrated with Docker Compose",
+      "body": "Frontend (React) and backend (Flask REST API) run as independent containers, keeping environments consistent across machines and avoiding the classic 'works on my machine' dependency conflicts between collaborators."
+    }
   ],
   "process": [
-    { "image": "flowchart.png", "caption": "FlowChart" },
-    { "image": "project.png", "caption": "Input and Output System" }
+    { "image": "process-1.png", "caption": "Initial user interface design for video upload" },
+    { "image": "process-2.png", "caption": "Usage policy modal shown when a user uploads a personal video" },
+    { "image": "process-3.png", "caption": "Extracted recipe rendered as a downloadable PDF" },
+    { "image": "process-4.png", "caption": "Extracted recipe rendered as a downloadable TXT file" },
+    { "image": "flowchart.png", "caption": "User flow: from video upload to recipe extraction" },
+    { "image": "architecture.png", "caption": "Software architecture: frontend, backend API, and AI processing services" }
   ],
-  "result": "...",
-  "learnings": "..."
+  "result": "Built as an academic prototype (a Master's thesis project, 2023), the system reached roughly 90% accuracy extracting ingredients and procedures, generating downloadable PDF and TXT files in a consistent recipe format. Across 14 integration test criteria, 64% passed fully and 36% passed partially — the main gaps were noisy OCR output requiring extra cleanup, and handling cases where a speaker grouped several ingredients under one shared quantity (e.g., '300g of flour, sugar, and milk').",
+  "learnings": "The ingredient-extraction logic today relies on fairly basic pattern matching — a more robust NLP approach (rule-based matching with spaCy, trained specifically on recipe language) would handle the ambiguous phrasing people actually use when talking through a recipe. On the video side, adding a lightweight CNN step to detect near-duplicate frames before running OCR would cut a lot of redundant processing, since consecutive frames from a static shot are analyzed independently right now."
 }
