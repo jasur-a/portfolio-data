@@ -3,7 +3,11 @@
   "title": "Javan",
   "tagline": "AI-powered extract video recipe ",
   "description": "....",
+  "coverImage": "project.png",
   "stack": ["React.js", "Python", "Flask"],
   "githubHref": "https://github.com/jasur-a/javan",
+  "status": "in-progress",
+  "visible": true,
   "featured": true
+
 }
