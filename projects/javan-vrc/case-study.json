@@ -1,5 +1,6 @@
 {
-  "slug": "javan",
+  "slug": "javan-vrc",
+  
   "problem": "AI recipe from video",
   "decisions": [
     { "title": "1", "body": "..." },
