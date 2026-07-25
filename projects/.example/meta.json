@@ -7,7 +7,8 @@
   "liveHref": "https://exmaple.app",
   "coverImage": "project.png",
   "githubHref": "https://github.com/jasur-a/example",
-  "status": "in-progress",
   "visible": false,
-  "featured": false
+  "featured": false,
+  "badges": []
+
 }
