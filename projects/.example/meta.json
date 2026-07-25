@@ -8,6 +8,6 @@
   "coverImage": "project.png",
   "githubHref": "https://github.com/jasur-a/example",
   "status": "in-progress",
-  "visible": true,
+  "visible": false,
   "featured": false
 }
